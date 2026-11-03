@@ -1,3 +1,10 @@
+/* ==========================================================
+   BOOKING LINK — the ONE place to change it.
+   Every "Book a call" button (marked data-booking) uses this.
+   Swap in a Calendly URL later, e.g. 'https://calendly.com/your-name/30min'
+   ========================================================== */
+const BOOKING_URL = 'mailto:shlomopinter@gmail.com?subject=Book%20a%20call';
+
 (() => {
   const d = document, root = d.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -8,16 +15,24 @@
 
   requestAnimationFrame(() => setTimeout(() => root.classList.add('loaded'), 60));
 
-  /* reveals */
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  $$('.reveal').forEach((el, i) => {
-    const sib = el.parentElement ? [...el.parentElement.children].filter(c => c.classList.contains('reveal')) : [];
-    const k = sib.indexOf(el);
-    if (k > 0 && !reduce) el.style.transitionDelay = Math.min(k, 6) * 70 + 'ms';
-    io.observe(el);
+  /* booking buttons */
+  $$('[data-booking]').forEach(a => {
+    a.href = BOOKING_URL;
+    if (/^https?:/i.test(BOOKING_URL)) { a.target = '_blank'; a.rel = 'noopener'; }
   });
+
+  /* reveals */
+  /* staggered: whatever enters together reveals in order, ~90ms apart */
+  const io = new IntersectionObserver(es => {
+    es.filter(e => e.isIntersecting).map(e => e.target)
+      .sort((a, b) => { const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect(); return (ra.top - rb.top) || (ra.left - rb.left); })
+      .forEach((el, k) => {
+        io.unobserve(el);
+        if (!reduce && k) { el.style.transitionDelay = Math.min(k, 7) * 90 + 'ms'; setTimeout(() => el.style.transitionDelay = '', 1400 + k * 90); }
+        el.classList.add('in');
+      });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+  $$('.reveal').forEach(el => io.observe(el));
 
   /* counters */
   const fmt = (n, f) => f === 'k' ? Math.round(n / 1000) + 'K' : String(Math.round(n));
@@ -51,21 +66,6 @@
     walk(el); el._w = $$('.w', el);
   });
 
-  /* pinned horizontal timeline */
-  const pin = $('.pin'), sticky = $('.pin-sticky'), steps = $('.steps'), stepEls = $$('.step'), bar = $('.track-bar');
-  let pinOn = false, pinStart = 0, pinLen = 0, travel = 0;
-  const setupPin = () => {
-    pinOn = !reduce && !!pin;
-    root.classList.toggle('pin-on', pinOn);
-    if (!pinOn) { pin && (pin.style.height = ''); return; }
-    steps.style.setProperty('--tx', '0px');
-    const wrap = $('.track-wrap').getBoundingClientRect();
-    travel = Math.max(0, steps.scrollWidth - wrap.width);
-    pin.style.height = (innerHeight + travel * 1.15) + 'px';
-    pinStart = pin.getBoundingClientRect().top + scrollY;
-    pinLen = pin.offsetHeight - innerHeight;
-  };
-
   /* scroll loop */
   const prog = $('.progress span'), nav = $('.nav');
   let ticking = false;
@@ -74,13 +74,6 @@
     const y = scrollY, H = d.body.scrollHeight - innerHeight;
     prog && prog.style.setProperty('--p', H > 0 ? (y / H).toFixed(4) : 0);
     nav.classList.toggle('scrolled', y > 10);
-    if (pinOn) {
-      const p = pinLen > 0 ? clamp((y - pinStart) / pinLen, 0, 1) : 0;
-      steps.style.setProperty('--tx', (-p * travel).toFixed(1) + 'px');
-      bar.style.setProperty('--tp', p.toFixed(4));
-      const lit = Math.round(p * (stepEls.length - 1));
-      stepEls.forEach((s, i) => s.classList.toggle('lit', i === lit && y >= pinStart - innerHeight * 0.2));
-    }
     scrubs.forEach(el => {
       const r = el.getBoundingClientRect();
       const p = reduce ? 1 : clamp((innerHeight * 0.88 - r.top) / (innerHeight * 0.55 + r.height * 0.5), 0, 1);
@@ -90,13 +83,13 @@
     if (mobileTiles) {
       let best = null, bd = 1e9;
       tiles.forEach(t => { const r = t.getBoundingClientRect(), c = Math.abs(r.top + r.height / 2 - innerHeight * 0.5);
-        if (c < bd && r.top < innerHeight * 0.8 && r.bottom > innerHeight * 0.2) { bd = c; best = t; } });
+        if (c < bd && r.top < innerHeight * 0.75 && r.bottom > innerHeight * 0.25) { bd = c; best = t; } });
       tiles.forEach(t => t.classList.toggle('active', t === best || t === tapped));
     }
   };
   const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
 
-  /* challenge tiles: spotlight + tilt (pointer), focus-follow on touch */
+  /* bento tiles: spotlight + border glow follow the pointer; on touch the tile in the middle of the screen lights up */
   const tiles = $$('.tile');
   const mobileTiles = !fine;
   let tapped = null;
@@ -104,10 +97,8 @@
     t.addEventListener('pointermove', e => {
       const r = t.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
       t.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); t.style.setProperty('--my', (y * 100).toFixed(1) + '%');
-      if (fine && !reduce) { t.style.setProperty('--ry', ((x - .5) * 8).toFixed(2) + 'deg'); t.style.setProperty('--rx', ((.5 - y) * 8).toFixed(2) + 'deg'); }
     });
-    t.addEventListener('pointerleave', () => { t.style.setProperty('--rx', '0deg'); t.style.setProperty('--ry', '0deg'); });
-    t.addEventListener('click', () => { tapped = tapped === t ? null : t; if (mobileTiles) req(); else tiles.forEach(o => o.classList.toggle('active', o === tapped)); });
+    t.addEventListener('click', e => { if (e.target.closest('a,summary,button')) return; tapped = tapped === t ? null : t; if (mobileTiles) req(); else tiles.forEach(o => o.classList.toggle('active', o === tapped)); });
   });
 
   /* magnetic */
@@ -127,7 +118,7 @@
     let cx = -100, cy = -100, tx = -100, ty = -100;
     addEventListener('pointermove', e => { tx = e.clientX; ty = e.clientY; cur.classList.add('on'); }, { passive: true });
     d.addEventListener('pointerleave', () => cur.classList.remove('on'));
-    d.addEventListener('pointerover', e => cur.classList.toggle('big', !!e.target.closest('a,button,.tile,.services li')));
+    d.addEventListener('pointerover', e => cur.classList.toggle('big', !!e.target.closest('a,button,summary,.tile')));
     const loop = () => { cx += (tx - cx) * .2; cy += (ty - cy) * .2; cur.style.transform = `translate3d(${cx}px,${cy}px,0)`; requestAnimationFrame(loop); };
     loop();
   }
@@ -191,8 +182,24 @@
     setTimeout(() => status.textContent = '', 3000);
   });
 
+  /* approach steps: light up one after another while the tile is on screen; hover/tap picks one */
+  const appr = $('.t-appr'), stepEls = $$('.step');
+  let si = 0, sTimer = 0, sHold = false;
+  const light = i => stepEls.forEach((s, k) => s.classList.toggle('lit', k === i));
+  const runSteps = on => { clearInterval(sTimer); if (!on || reduce) return;
+    sTimer = setInterval(() => { if (!sHold) { si = (si + 1) % stepEls.length; light(si); } }, 2200); };
+  if (appr) {
+    light(0);
+    new IntersectionObserver(es => runSteps(es[0].isIntersecting), { threshold: 0.35 }).observe(appr);
+    stepEls.forEach((s, k) => {
+      s.addEventListener('pointerenter', () => { if (fine) { sHold = true; si = k; light(k); } });
+      s.addEventListener('pointerleave', () => { sHold = false; });
+      s.addEventListener('click', () => { si = k; light(k); });
+    });
+  }
+
   let rw = innerWidth;
-  const onResize = () => { size(); setupPin(); onScroll(); if (reduce) draw(0); };
+  const onResize = () => { size(); onScroll(); if (reduce) draw(0); };
   addEventListener('resize', () => { if (innerWidth !== rw || fine) { rw = innerWidth; onResize(); } });
   addEventListener('scroll', req, { passive: true });
   addEventListener('load', onResize);
