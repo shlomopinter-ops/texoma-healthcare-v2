@@ -14,7 +14,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Texoma Healthcare Group">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f5f3ee">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1422" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -25,6 +27,8 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
 
 <header class="nav" id="top">
   <a class="brand" href="#top" aria-label="Texoma Healthcare Group, back to top">
@@ -37,39 +41,53 @@
       <li><a href="#founder">Founder</a></li>
     </ul>
   </nav>
-  <a class="nav-cta" href="#contact">Let&rsquo;s talk</a>
+  <a class="nav-cta magnetic" href="#contact"><span>Let&rsquo;s talk</span></a>
 </header>
 
 <main id="main">
 
   <section class="hero" aria-labelledby="hero-title">
-    <p class="eyebrow reveal">Healthcare operations consulting</p>
-    <h1 id="hero-title" class="display">
-      <span class="line"><span class="reveal-line">Healthcare operations.</span></span>
-      <span class="line"><span class="reveal-line"><em class="hero-em">Built for growth.</em></span></span>
-    </h1>
-    <div class="hero-foot reveal">
-      <p class="lede"><strong>Strong teams. Smoother clinics. Systems that work in the field.</strong><br><br>Texoma Healthcare Group helps healthcare organizations strengthen daily operations, develop regional leaders, and build the structure to grow with confidence.</p>
-      <p class="hero-ctas"><a class="arrow-link" href="#contact">Let&rsquo;s talk <span aria-hidden="true">&rarr;</span></a> &nbsp;&nbsp;&nbsp; <a class="arrow-link" href="#work">Explore our services <span aria-hidden="true">&rarr;</span></a></p>
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Healthcare operations consulting</p>
+      <h1 id="hero-title" class="display">
+        <span class="line"><span class="reveal-line">Healthcare operations.</span></span>
+        <span class="line"><span class="reveal-line"><em class="hero-em">Built for growth.</em></span></span>
+      </h1>
+      <div class="hero-foot reveal">
+        <p class="lede"><strong>Strong teams. Smoother clinics. Systems that work in the field.</strong><br><br>Texoma Healthcare Group helps healthcare organizations strengthen daily operations, develop regional leaders, and build the structure to grow with confidence.</p>
+        <p class="hero-ctas"><a class="btn btn-solid magnetic" href="#contact"><span>Let&rsquo;s talk <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a> <a class="btn btn-ghost magnetic" href="#work"><span>Explore our services <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a></p>
+      </div>
     </div>
-    <ul class="pillars reveal" aria-label="Focus areas">
+    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <div class="marquee" role="region" aria-label="Focus areas">
+    <ul class="marquee-track">
       <li>Field operations</li>
       <li>Regional teams</li>
       <li>Clinic operations</li>
       <li>Interim leadership</li>
     </ul>
-  </section>
+    <ul class="marquee-track" aria-hidden="true">
+      <li>Field operations</li>
+      <li>Regional teams</li>
+      <li>Clinic operations</li>
+      <li>Interim leadership</li>
+    </ul>
+  </div>
 
-  <section class="work" id="challenges" aria-labelledby="chal-title">
+  <section class="challenges" id="challenges" aria-labelledby="chal-title">
     <div class="section-head reveal">
       <h2 id="chal-title" class="label">Challenges</h2>
       <p class="section-title">Growing brings new challenges. <em>We help you work through them.</em></p>
     </div>
-    <ol class="services">
-      <li class="reveal"><span class="n">01</span><h3>Your managers are stretched thin.</h3><p>Give regional leaders clear responsibilities, practical routines, and the support to lead.</p></li>
-      <li class="reveal"><span class="n">02</span><h3>Every location runs differently.</h3><p>Build consistent processes while accounting for what each facility needs.</p></li>
-      <li class="reveal"><span class="n">03</span><h3>Daily problems keep reaching your desk.</h3><p>Create clear ownership and follow-through so your team can resolve issues.</p></li>
-      <li class="reveal"><span class="n">04</span><h3>You need experienced leadership now.</h3><p>Bring in interim or fractional operations support during growth, transitions, or leadership gaps.</p></li>
+    <ol class="tiles">
+      <li class="tile reveal" tabindex="0"><span class="tile-n" aria-hidden="true">01</span><h3>Your managers are stretched thin.</h3><p>Give regional leaders clear responsibilities, practical routines, and the support to lead.</p></li>
+      <li class="tile reveal" tabindex="0"><span class="tile-n" aria-hidden="true">02</span><h3>Every location runs differently.</h3><p>Build consistent processes while accounting for what each facility needs.</p></li>
+      <li class="tile reveal" tabindex="0"><span class="tile-n" aria-hidden="true">03</span><h3>Daily problems keep reaching your desk.</h3><p>Create clear ownership and follow-through so your team can resolve issues.</p></li>
+      <li class="tile reveal" tabindex="0"><span class="tile-n" aria-hidden="true">04</span><h3>You need experienced leadership now.</h3><p>Bring in interim or fractional operations support during growth, transitions, or leadership gaps.</p></li>
     </ol>
   </section>
 
@@ -107,35 +125,42 @@
   </section>
 
   <section class="approach" id="approach" aria-labelledby="approach-title">
-    <div class="section-head reveal">
-      <h2 id="approach-title" class="label">How we work</h2>
-      <p class="section-title">Systematic, <em>side by side.</em></p>
-      <p class="section-note">Every engagement is run hand in hand with your operations team and field supervisors.</p>
+    <div class="pin">
+      <div class="pin-sticky">
+        <div class="section-head reveal">
+          <h2 id="approach-title" class="label">How we work</h2>
+          <p class="section-title">Systematic, <em>side by side.</em></p>
+          <p class="section-note">Every engagement is run hand in hand with your operations team and field supervisors.</p>
+        </div>
+        <div class="track-wrap">
+          <ol class="steps">
+            <li class="step"><span class="step-n">I</span><h3>Assess</h3><p>Ride along, listen and map how the field actually runs today.</p></li>
+            <li class="step"><span class="step-n">II</span><h3>Build</h3><p>Set the structure, roles and routines the team needs.</p></li>
+            <li class="step"><span class="step-n">III</span><h3>Embed</h3><p>Coach supervisors and managers until the system runs on its own.</p></li>
+            <li class="step"><span class="step-n">IV</span><h3>Scale</h3><p>Add people, facilities and regions on a foundation that holds.</p></li>
+          </ol>
+        </div>
+        <div class="track-bar" aria-hidden="true"><span></span></div>
+      </div>
     </div>
-    <ol class="steps">
-      <li class="reveal"><span class="step-n">I</span><h3>Assess</h3><p>Ride along, listen and map how the field actually runs today.</p></li>
-      <li class="reveal"><span class="step-n">II</span><h3>Build</h3><p>Set the structure, roles and routines the team needs.</p></li>
-      <li class="reveal"><span class="step-n">III</span><h3>Embed</h3><p>Coach supervisors and managers until the system runs on its own.</p></li>
-      <li class="reveal"><span class="step-n">IV</span><h3>Scale</h3><p>Add people, facilities and regions on a foundation that holds.</p></li>
-    </ol>
   </section>
 
   <section class="founder" id="founder" aria-labelledby="founder-title">
     <div class="founder-grid">
       <div class="founder-id reveal">
         <h2 class="label">Founder</h2>
-        <div class="monogram" aria-hidden="true">SP</div>
+        <div class="monogram" aria-hidden="true"><span>SP</span></div>
         <p id="founder-title" class="founder-name">Shlomo Pinter</p>
       </div>
       <div class="founder-body">
-        <blockquote class="reveal"><p>Shlomo understands facilities from every side, <em>operational to clinical,</em> and from the owner&rsquo;s chair.</p></blockquote>
-        <ul class="facts reveal">
-          <li>Former Director of Field and Regional Operations at a multi-state healthcare provider services company</li>
-          <li>Grew the regional team from 6 to 20 regional managers</li>
-          <li>Built the operational systems and facility relationships behind that growth</li>
-          <li>5&frac12; years running an urgent care and 2 clinics, serving upwards of 70,000 patients</li>
-          <li>Owns and operates an assisted living home</li>
-          <li>Manages commercial properties in the family business</li>
+        <blockquote class="scrub"><p>Shlomo understands facilities from every side, <em>operational to clinical,</em> and from the owner&rsquo;s chair.</p></blockquote>
+        <ul class="facts">
+          <li class="reveal">Former Director of Field and Regional Operations at a multi-state healthcare provider services company</li>
+          <li class="reveal">Grew the regional team from 6 to 20 regional managers</li>
+          <li class="reveal">Built the operational systems and facility relationships behind that growth</li>
+          <li class="reveal">5&frac12; years running an urgent care and 2 clinics, serving upwards of 70,000 patients</li>
+          <li class="reveal">Owns and operates an assisted living home</li>
+          <li class="reveal">Manages commercial properties in the family business</li>
         </ul>
       </div>
     </div>
@@ -143,19 +168,22 @@
 
   <section class="tech" aria-labelledby="tech-title">
     <h2 class="label reveal">Technology</h2>
-    <p id="tech-title" class="tech-line reveal">We also build <em>the tools.</em></p>
+    <p id="tech-title" class="tech-line scrub">We also build <em>the tools.</em></p>
     <p class="section-note reveal">Texoma develops field-operations and remote-monitoring software for healthcare teams, shaped by the same work we do in the field.</p>
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="contact-title reveal">Let&rsquo;s talk about what your operation <em>needs next.</em></h2>
-    <p class="lede reveal">Whether you&rsquo;re growing a regional team, improving clinic workflows, or navigating a leadership transition, let&rsquo;s start with a conversation.</p>
-    <p class="reveal"><a class="arrow-link" href="mailto:shlomopinter@gmail.com?subject=Texoma%20Healthcare%20Group">Talk with Shlomo <span aria-hidden="true">&rarr;</span></a></p>
-    <div class="contact-row reveal">
-      <a class="email" href="mailto:shlomopinter@gmail.com?subject=Texoma%20Healthcare%20Group">shlomopinter@gmail.com</a>
-      <button class="copy" type="button" data-copy="shlomopinter@gmail.com">Copy email</button>
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="contact-inner">
+      <h2 id="contact-title" class="contact-title reveal">Let&rsquo;s talk about what your operation <em>needs next.</em></h2>
+      <p class="lede reveal">Whether you&rsquo;re growing a regional team, improving clinic workflows, or navigating a leadership transition, let&rsquo;s start with a conversation.</p>
+      <p class="reveal"><a class="btn btn-gold btn-lg magnetic" href="mailto:shlomopinter@gmail.com?subject=Texoma%20Healthcare%20Group"><span>Talk with Shlomo <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a></p>
+      <div class="contact-row reveal">
+        <a class="email" href="mailto:shlomopinter@gmail.com?subject=Texoma%20Healthcare%20Group">shlomopinter@gmail.com</a>
+        <button class="copy magnetic" type="button" data-copy="shlomopinter@gmail.com"><span>Copy email</span></button>
+      </div>
+      <p class="copy-status" role="status" aria-live="polite"></p>
     </div>
-    <p class="copy-status" role="status" aria-live="polite"></p>
   </section>
 
 </main>
