@@ -255,3 +255,11 @@ blockquote p{font:400 clamp(32px,3.8vw,56px)/1.12 var(--serif);letter-spacing:-.
   .marquee-track[aria-hidden]{display:none}
   .marquee{flex-wrap:wrap}
 }
+
+/* logo */
+.brand{align-items:center}
+.logo{display:block;height:34px;width:auto}
+.logo-lt{display:none}
+.foot-logo .logo{height:26px}
+@media (prefers-color-scheme:dark){.logo-dk{display:none}.logo-lt{display:block}}
+@media (max-width:760px){.logo{height:30px}.foot-logo .logo{height:22px}}
