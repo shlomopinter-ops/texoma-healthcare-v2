@@ -89,76 +89,15 @@
     </div>
 
     <div class="seg reveal" role="tablist" aria-label="Choose a view">
-      <button class="seg-btn" role="tab" id="tab-own" aria-controls="panel-own" aria-selected="true">Ownership view</button>
-      <button class="seg-btn" role="tab" id="tab-reg" aria-controls="panel-reg" aria-selected="false" tabindex="-1">Regional view</button>
+      <button class="seg-btn" role="tab" id="tab-own" aria-controls="panel-own" aria-selected="true">Ownership (admin)</button>
+      <button class="seg-btn" role="tab" id="tab-reg" aria-controls="panel-reg" aria-selected="false" tabindex="-1">Regional</button>
       <span class="seg-pill" aria-hidden="true"></span>
     </div>
 
     <!-- OWNERSHIP -->
     <div class="panel" id="panel-own" role="tabpanel" aria-labelledby="tab-own">
-      <div class="dash reveal" aria-label="Sample ownership dashboard (sample data)">
-        <div class="dash-bar">
-          <span class="dots3" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span class="dash-url">Portfolio overview</span>
-          <span class="badge">Sample data</span>
-        </div>
-        <div class="dash-body">
-          <div class="kpis">
-            <div class="kpi"><span class="kpi-l">Facilities</span><span class="kpi-n" data-kpi="all">48</span></div>
-            <div class="kpi g"><span class="kpi-l">Green</span><span class="kpi-n" data-kpi="g">31</span></div>
-            <div class="kpi y"><span class="kpi-l">Yellow</span><span class="kpi-n" data-kpi="y">12</span></div>
-            <div class="kpi r"><span class="kpi-l">Red</span><span class="kpi-n" data-kpi="r">5</span></div>
-          </div>
-
-          <div class="dash-grid">
-            <div class="card portfolio">
-              <div class="card-h">
-                <h3>Relationship health</h3>
-                <div class="chips" role="group" aria-label="Filter facilities by status">
-                  <button class="chip on" data-f="all" aria-pressed="true">All</button>
-                  <button class="chip" data-f="g" aria-pressed="false"><i class="sw g"></i>Green</button>
-                  <button class="chip" data-f="y" aria-pressed="false"><i class="sw y"></i>Yellow</button>
-                  <button class="chip" data-f="r" aria-pressed="false"><i class="sw r"></i>Red</button>
-                </div>
-              </div>
-              <div class="fac-grid" role="list" aria-label="Sample facilities"></div>
-              <div class="fac-detail" aria-live="polite">
-                <p class="fd-hint">Tap any dot to open a facility.</p>
-              </div>
-            </div>
-
-            <div class="card trend">
-              <div class="card-h"><h3>Portfolio trend</h3><span class="mini">Last 6 months</span></div>
-              <svg class="trend-svg draw" viewBox="0 0 320 150" role="img" aria-label="Sample trend chart: share of green facilities rising over six months">
-                <g class="gridlines"><line x1="0" y1="30" x2="320" y2="30"/><line x1="0" y1="70" x2="320" y2="70"/><line x1="0" y1="110" x2="320" y2="110"/></g>
-                <path class="area" d="M0,112 L64,104 L128,92 L192,80 L256,62 L320,48 L320,150 L0,150 Z"/>
-                <path class="ln ln-g" d="M0,112 L64,104 L128,92 L192,80 L256,62 L320,48"/>
-                <path class="ln ln-r" d="M0,70 L64,78 L128,88 L192,98 L256,108 L320,116"/>
-                <g class="pts"><circle cx="320" cy="48" r="4.5" class="pt-g"/><circle cx="320" cy="116" r="4.5" class="pt-r"/></g>
-              </svg>
-              <div class="legend"><span><i class="sw g"></i>Green share</span><span><i class="sw r"></i>Red share</span></div>
-            </div>
-
-            <div class="card esc">
-              <div class="card-h"><h3>Needs attention</h3><span class="pulse-tag"><i></i>3 escalations</span></div>
-              <ul class="esc-list">
-                <li><i class="sw r"></i><div><b>Sample Facility C</b><span>Red for 2 visits &middot; Regional 2</span></div><em>Escalated</em></li>
-                <li><i class="sw r"></i><div><b>Maple Grove Care</b><span>Equipment issue open &middot; Regional 1</span></div><em>Escalated</em></li>
-                <li><i class="sw y"></i><div><b>Sample Facility K</b><span>Visit overdue 6 days &middot; Regional 3</span></div><em class="soft">Overdue</em></li>
-              </ul>
-            </div>
-
-            <div class="card month">
-              <div class="card-h"><h3>Monthly report</h3><span class="mini">Ready to send</span></div>
-              <div class="month-doc" aria-hidden="true">
-                <span class="md-t"></span><span class="md-l"></span><span class="md-l s"></span>
-                <span class="md-bars"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:78%"></i><i style="--h:66%"></i><i style="--h:90%"></i></span>
-              </div>
-              <p class="mini">Automatic each month for ownership.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="duo reveal"><div class="duo-col duo-desk"><p class="duo-k">Desktop</p><figure class="dev dev-desk carousel"><div class="browser"><div class="b-bar" aria-hidden="true"><span class="b-dots"><i></i><i></i><i></i></span><span class="b-url">Admin view</span><span class="badge sm">Sample data</span></div><div class="shots" tabindex="0" role="region" aria-label="Admin view: desktop screens"><img src="img/app/own-desk-1-1200.webp" srcset="img/app/own-desk-1-720.webp 720w, img/app/own-desk-1-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="Dashboard: today across the portfolio (real screen, sample data)" data-cap="Dashboard: today across the portfolio" decoding="async"><img src="img/app/own-desk-2-1200.webp" srcset="img/app/own-desk-2-720.webp 720w, img/app/own-desk-2-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="Facility health: green, yellow, red (real screen, sample data)" data-cap="Facility health: green, yellow, red" decoding="async" loading="lazy"><img src="img/app/own-desk-3-1200.webp" srcset="img/app/own-desk-3-720.webp 720w, img/app/own-desk-3-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="Leadership reviews each visit (real screen, sample data)" data-cap="Leadership reviews each visit" decoding="async" loading="lazy"></div></div><figcaption class="shot-cap"><button type="button" class="sa prev" aria-label="Previous screen">&larr;</button><span class="cap-t" aria-live="polite">Dashboard: today across the portfolio</span><span class="sdots"><button type="button" class="sd on" aria-label="Show screen 1: Dashboard: today across the portfolio"></button><button type="button" class="sd" aria-label="Show screen 2: Facility health: green, yellow, red"></button><button type="button" class="sd" aria-label="Show screen 3: Leadership reviews each visit"></button></span><button type="button" class="sa next" aria-label="Next screen">&rarr;</button></figcaption></figure></div><div class="duo-col duo-ph"><p class="duo-k">Phone app</p><figure class="dev dev-phone carousel"><div class="iphone"><span class="i-island" aria-hidden="true"></span><div class="shots" tabindex="0" role="region" aria-label="Admin view: phone screens"><img src="img/app/own-phone-1.webp" width="540" height="1169" alt="Dashboard on the phone (real screen, sample data)" data-cap="Dashboard on the phone" decoding="async" loading="lazy"><img src="img/app/own-phone-2.webp" width="540" height="1169" alt="Facility health (real screen, sample data)" data-cap="Facility health" decoding="async" loading="lazy"><img src="img/app/own-phone-3.webp" width="540" height="1169" alt="Review a visit (real screen, sample data)" data-cap="Review a visit" decoding="async" loading="lazy"></div></div><figcaption class="shot-cap"><button type="button" class="sa prev" aria-label="Previous screen">&larr;</button><span class="cap-t" aria-live="polite">Dashboard on the phone</span><span class="sdots"><button type="button" class="sd on" aria-label="Show screen 1: Dashboard on the phone"></button><button type="button" class="sd" aria-label="Show screen 2: Facility health"></button><button type="button" class="sd" aria-label="Show screen 3: Review a visit"></button></span><button type="button" class="sa next" aria-label="Next screen">&rarr;</button></figcaption></figure></div></div>
+      <p class="real-note"><span class="badge sm">Sample data</span> Real screens from our platform. Facility, staff and team names are replaced with sample names.</p>
 
       <ul class="feat-list reveal">
         <li><span class="fi">01</span><div><h3>Portfolio at a glance</h3><p>Every facility color coded green, yellow or red by relationship health.</p></div></li>
@@ -170,86 +109,8 @@
 
     <!-- REGIONAL -->
     <div class="panel" id="panel-reg" role="tabpanel" aria-labelledby="tab-reg" hidden>
-      <div class="reg-wrap">
-        <div class="phone-col">
-          <div class="phone" aria-label="Sample regional app (sample data)">
-            <div class="notch" aria-hidden="true"></div>
-            <div class="screen">
-              <div class="app-top"><span class="app-time">9:41</span><span class="badge sm">Sample data</span></div>
-
-              <!-- screen 0 home -->
-              <section class="scr on" data-s="0" aria-label="Today">
-                <p class="app-hi">Good morning, <b>Regional 1</b></p>
-                <div class="app-map" aria-hidden="true">
-                  <i class="pin g" style="left:18%;top:30%"></i><i class="pin y" style="left:44%;top:58%"></i><i class="pin g" style="left:70%;top:24%"></i><i class="pin r" style="left:62%;top:70%"></i><i class="pin g" style="left:30%;top:76%"></i><i class="pin y" style="left:84%;top:52%"></i>
-                  <span class="me"></span>
-                </div>
-                <p class="app-sec">Due this week</p>
-                <ul class="due">
-                  <li><i class="sw r"></i><span><b>Sample Facility C</b><small>1 of 2 visits this month</small></span><em>Today</em></li>
-                  <li><i class="sw y"></i><span><b>Maple Grove Care</b><small>0 of 2 visits this month</small></span><em>Thu</em></li>
-                  <li><i class="sw g"></i><span><b>Sample Facility F</b><small>1 of 2 visits this month</small></span><em>Fri</em></li>
-                </ul>
-                <button class="app-btn" data-go="1">+ Log a visit</button>
-              </section>
-
-              <!-- screen 1 form -->
-              <section class="scr" data-s="1" aria-label="Log a visit">
-                <p class="app-back" data-go="0">&larr; Back</p>
-                <h4 class="app-h">New visit</h4>
-                <label class="fld"><span>Facility</span><b>Sample Facility C</b></label>
-                <p class="app-sec">Visit type</p>
-                <div class="vtypes" role="group" aria-label="Visit type">
-                  <button class="vt on" aria-pressed="true">Routine monthly</button>
-                  <button class="vt" aria-pressed="false">Relationship building</button>
-                  <button class="vt" aria-pressed="false">Compliance follow-up</button>
-                  <button class="vt" aria-pressed="false">Equipment / cart issue</button>
-                  <button class="vt" aria-pressed="false">Quick stop</button>
-                </div>
-                <p class="app-sec">How did it go?</p>
-                <div class="health" role="group" aria-label="Relationship health">
-                  <button class="hb g" aria-pressed="false">Green</button>
-                  <button class="hb y on" aria-pressed="true">Yellow</button>
-                  <button class="hb r" aria-pressed="false">Red</button>
-                </div>
-                <div class="fld notes"><span>Notes</span><p class="typed" data-text="Met with the administrator. Cart issue on the 2nd floor resolved. Follow up on staffing next visit."></p></div>
-                <button class="app-btn" data-go="2">Submit visit</button>
-              </section>
-
-              <!-- screen 2 submitted -->
-              <section class="scr" data-s="2" aria-label="Submitted">
-                <div class="done">
-                  <svg viewBox="0 0 52 52" class="check" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
-                  <h4 class="app-h">Visit submitted</h4>
-                  <p class="app-p">Sent to leadership for review. Facility history updated.</p>
-                </div>
-                <div class="tl">
-                  <div class="tl-i ok"><i></i><span>Logged on site</span></div>
-                  <div class="tl-i ok"><i></i><span>Submitted</span></div>
-                  <div class="tl-i wait"><i></i><span>Waiting for review&hellip;</span></div>
-                </div>
-                <button class="app-btn ghost" data-go="3">See review &rarr;</button>
-              </section>
-
-              <!-- screen 3 reviewed -->
-              <section class="scr" data-s="3" aria-label="Reviewed">
-                <p class="app-back" data-go="0">&larr; Home</p>
-                <h4 class="app-h">Reviewed <span class="tick">&#10003;</span></h4>
-                <div class="msg in"><b>Leadership</b><p>Nice work closing out the cart issue. Let&rsquo;s get them back to green by the next visit.</p></div>
-                <div class="msg out"><p>Will do. Second visit is booked for the 18th.</p></div>
-                <div class="alert"><i class="sw r"></i><p><b>Escalation email sent</b> for Sample Facility C (red status) to the leadership team.</p></div>
-                <button class="app-btn" data-go="0">Done</button>
-              </section>
-            </div>
-          </div>
-          <ol class="flow" aria-label="Visit workflow">
-            <li class="on" data-go="0"><button type="button">Today</button></li>
-            <li data-go="1"><button type="button">Log</button></li>
-            <li data-go="2"><button type="button">Submit</button></li>
-            <li data-go="3"><button type="button">Review</button></li>
-          </ol>
-          <p class="tap-hint">Tap through the app &uarr;</p>
-        </div>
+      <div class="duo reveal"><div class="duo-col duo-desk"><p class="duo-k">Desktop</p><figure class="dev dev-desk carousel"><div class="browser"><div class="b-bar" aria-hidden="true"><span class="b-dots"><i></i><i></i><i></i></span><span class="b-url">Regional</span><span class="badge sm">Sample data</span></div><div class="shots" tabindex="0" role="region" aria-label="Regional view: desktop screens"><img src="img/app/reg-desk-1-1200.webp" srcset="img/app/reg-desk-1-720.webp 720w, img/app/reg-desk-1-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="My site visits and their status (real screen, sample data)" data-cap="My site visits and their status" decoding="async" loading="lazy"><img src="img/app/reg-desk-2-1200.webp" srcset="img/app/reg-desk-2-720.webp 720w, img/app/reg-desk-2-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="My facilities (real screen, sample data)" data-cap="My facilities" decoding="async" loading="lazy"><img src="img/app/reg-desk-3-1200.webp" srcset="img/app/reg-desk-3-720.webp 720w, img/app/reg-desk-3-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="Log a site visit (real screen, sample data)" data-cap="Log a site visit" decoding="async" loading="lazy"><img src="img/app/reg-desk-4-1200.webp" srcset="img/app/reg-desk-4-720.webp 720w, img/app/reg-desk-4-1200.webp 1200w" sizes="(max-width:760px) 92vw, 760px" width="1200" height="750" alt="Submitted visit, reviewed by leadership (real screen, sample data)" data-cap="Submitted visit, reviewed by leadership" decoding="async" loading="lazy"></div></div><figcaption class="shot-cap"><button type="button" class="sa prev" aria-label="Previous screen">&larr;</button><span class="cap-t" aria-live="polite">My site visits and their status</span><span class="sdots"><button type="button" class="sd on" aria-label="Show screen 1: My site visits and their status"></button><button type="button" class="sd" aria-label="Show screen 2: My facilities"></button><button type="button" class="sd" aria-label="Show screen 3: Log a site visit"></button><button type="button" class="sd" aria-label="Show screen 4: Submitted visit, reviewed by leadership"></button></span><button type="button" class="sa next" aria-label="Next screen">&rarr;</button></figcaption></figure></div><div class="duo-col duo-ph"><p class="duo-k">Phone app</p><figure class="dev dev-phone carousel"><div class="iphone"><span class="i-island" aria-hidden="true"></span><div class="shots" tabindex="0" role="region" aria-label="Regional view: phone screens"><img src="img/app/reg-phone-1.webp" width="540" height="1169" alt="My facilities (real screen, sample data)" data-cap="My facilities" decoding="async" loading="lazy"><img src="img/app/reg-phone-2.webp" width="540" height="1169" alt="Log a site visit (real screen, sample data)" data-cap="Log a site visit" decoding="async" loading="lazy"><img src="img/app/reg-phone-3.webp" width="540" height="1169" alt="Submitted and reviewed (real screen, sample data)" data-cap="Submitted and reviewed" decoding="async" loading="lazy"><img src="img/app/reg-phone-4.webp" width="540" height="1169" alt="My visits (real screen, sample data)" data-cap="My visits" decoding="async" loading="lazy"></div></div><figcaption class="shot-cap"><button type="button" class="sa prev" aria-label="Previous screen">&larr;</button><span class="cap-t" aria-live="polite">My facilities</span><span class="sdots"><button type="button" class="sd on" aria-label="Show screen 1: My facilities"></button><button type="button" class="sd" aria-label="Show screen 2: Log a site visit"></button><button type="button" class="sd" aria-label="Show screen 3: Submitted and reviewed"></button><button type="button" class="sd" aria-label="Show screen 4: My visits"></button></span><button type="button" class="sa next" aria-label="Next screen">&rarr;</button></figcaption></figure></div></div>
+      <p class="real-note"><span class="badge sm">Sample data</span> Real screens from our platform. Facility, staff and team names are replaced with sample names.</p>
 
         <ul class="feat-list two reveal">
           <li><span class="fi">01</span><div><h3>Log visits in seconds</h3><p>Routine monthly, relationship building, compliance follow-up, equipment or cart issue, or a quick stop.</p></div></li>
@@ -259,7 +120,7 @@
           <li><span class="fi">05</span><div><h3>Leadership review</h3><p>Leadership reviews each visit and the regional gets feedback, so coaching happens every week.</p></div></li>
           <li><span class="fi">06</span><div><h3>Messaging and escalations</h3><p>Built-in messaging, plus automatic escalation emails when a facility turns red.</p></div></li>
         </ul>
-      </div>
+      
     </div>
   </section>
 
