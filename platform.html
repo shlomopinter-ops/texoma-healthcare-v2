@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our platform | Texoma Healthcare Group</title>
+<meta name="description" content="The Texoma field operations platform: a portfolio-wide view for ownership, a mobile site-visit app for regional teams, and the reports that tie them together. Already in use across 300+ facilities.">
+<meta property="og:title" content="Our platform | Texoma Healthcare Group">
+<meta property="og:description" content="Software and reports for ownership and regional teams. Already in use across 300+ facilities.">
+<meta property="og:image" content="https://shlomopinter-ops.github.io/texoma-healthcare-v2/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://shlomopinter-ops.github.io/texoma-healthcare-v2/platform.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Texoma Healthcare Group">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1422" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="platform.css">
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<script src="script.js" defer></script>
+<script src="platform.js" defer></script>
+</head>
+<body class="page-platform">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <a class="brand" href="index.html" aria-label="Texoma Healthcare Group, home">
+    <img class="logo logo-dk" src="img/logo-dark.png" alt="Texoma Healthcare" width="1055" height="215"><img class="logo logo-lt" src="img/logo-light.png" alt="" aria-hidden="true" width="1055" height="215">
+  </a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="index.html#work">Services</a></li>
+      <li><a href="index.html#approach">Approach</a></li>
+      <li><a href="index.html#founder">Founder</a></li>
+      <li><a href="platform.html" aria-current="page">Platform</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <a class="nav-plat is-current" href="platform.html" aria-current="page">Platform</a>
+    <a class="nav-cta magnetic" href="#contact"><span>Let&rsquo;s talk</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero p-hero" aria-labelledby="hero-title">
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Texoma field operations platform</p>
+      <h1 id="hero-title" class="display p-display">
+        <span class="line"><span class="reveal-line">Every facility.</span></span>
+        <span class="line"><span class="reveal-line"><em class="hero-em">One clear picture.</em></span></span>
+      </h1>
+      <div class="p-hero-foot reveal">
+        <p class="lede">Our platform gives <strong>ownership</strong> a live view of the whole portfolio and gives <strong>regional teams</strong> a fast mobile app for every site visit, with the reports that tie it all together.</p>
+        <div class="p-stat" data-countwrap>
+          <span class="p-stat-num"><span data-count="300">300</span><span class="p-plus">+</span></span>
+          <span class="p-stat-txt">facilities<br>already using it</span>
+        </div>
+      </div>
+      <p class="hero-ctas reveal"><a class="btn btn-solid magnetic" href="#tour"><span>Take the tour <span class="btn-arrow" aria-hidden="true">&darr;</span></span></a> <a class="btn btn-ghost magnetic" data-booking href="#contact"><span>Book a demo <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a></p>
+    </div>
+  </section>
+
+  <div class="marquee" role="region" aria-label="What the platform covers">
+    <ul class="marquee-track">
+      <li>Portfolio health</li><li>Site visits</li><li>Leadership review</li><li>Escalations</li><li>Monthly reports</li>
+    </ul>
+    <ul class="marquee-track" aria-hidden="true">
+      <li>Portfolio health</li><li>Site visits</li><li>Leadership review</li><li>Escalations</li><li>Monthly reports</li>
+    </ul>
+  </div>
+
+  <section class="p-tour" id="tour" aria-labelledby="tour-title">
+    <div class="p-head reveal">
+      <p class="label">The tour</p>
+      <h2 id="tour-title" class="p-title">Built for both sides <em>of the operation.</em></h2>
+      <p class="note">Switch views to see what ownership sees, and what a regional team member carries in their pocket.</p>
+    </div>
+
+    <div class="seg reveal" role="tablist" aria-label="Choose a view">
+      <button class="seg-btn" role="tab" id="tab-own" aria-controls="panel-own" aria-selected="true">Ownership view</button>
+      <button class="seg-btn" role="tab" id="tab-reg" aria-controls="panel-reg" aria-selected="false" tabindex="-1">Regional view</button>
+      <span class="seg-pill" aria-hidden="true"></span>
+    </div>
+
+    <!-- OWNERSHIP -->
+    <div class="panel" id="panel-own" role="tabpanel" aria-labelledby="tab-own">
+      <div class="dash reveal" aria-label="Sample ownership dashboard (sample data)">
+        <div class="dash-bar">
+          <span class="dots3" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="dash-url">Portfolio overview</span>
+          <span class="badge">Sample data</span>
+        </div>
+        <div class="dash-body">
+          <div class="kpis">
+            <div class="kpi"><span class="kpi-l">Facilities</span><span class="kpi-n" data-kpi="all">48</span></div>
+            <div class="kpi g"><span class="kpi-l">Green</span><span class="kpi-n" data-kpi="g">31</span></div>
+            <div class="kpi y"><span class="kpi-l">Yellow</span><span class="kpi-n" data-kpi="y">12</span></div>
+            <div class="kpi r"><span class="kpi-l">Red</span><span class="kpi-n" data-kpi="r">5</span></div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="card portfolio">
+              <div class="card-h">
+                <h3>Relationship health</h3>
+                <div class="chips" role="group" aria-label="Filter facilities by status">
+                  <button class="chip on" data-f="all" aria-pressed="true">All</button>
+                  <button class="chip" data-f="g" aria-pressed="false"><i class="sw g"></i>Green</button>
+                  <button class="chip" data-f="y" aria-pressed="false"><i class="sw y"></i>Yellow</button>
+                  <button class="chip" data-f="r" aria-pressed="false"><i class="sw r"></i>Red</button>
+                </div>
+              </div>
+              <div class="fac-grid" role="list" aria-label="Sample facilities"></div>
+              <div class="fac-detail" aria-live="polite">
+                <p class="fd-hint">Tap any dot to open a facility.</p>
+              </div>
+            </div>
+
+            <div class="card trend">
+              <div class="card-h"><h3>Portfolio trend</h3><span class="mini">Last 6 months</span></div>
+              <svg class="trend-svg draw" viewBox="0 0 320 150" role="img" aria-label="Sample trend chart: share of green facilities rising over six months">
+                <g class="gridlines"><line x1="0" y1="30" x2="320" y2="30"/><line x1="0" y1="70" x2="320" y2="70"/><line x1="0" y1="110" x2="320" y2="110"/></g>
+                <path class="area" d="M0,112 L64,104 L128,92 L192,80 L256,62 L320,48 L320,150 L0,150 Z"/>
+                <path class="ln ln-g" d="M0,112 L64,104 L128,92 L192,80 L256,62 L320,48"/>
+                <path class="ln ln-r" d="M0,70 L64,78 L128,88 L192,98 L256,108 L320,116"/>
+                <g class="pts"><circle cx="320" cy="48" r="4.5" class="pt-g"/><circle cx="320" cy="116" r="4.5" class="pt-r"/></g>
+              </svg>
+              <div class="legend"><span><i class="sw g"></i>Green share</span><span><i class="sw r"></i>Red share</span></div>
+            </div>
+
+            <div class="card esc">
+              <div class="card-h"><h3>Needs attention</h3><span class="pulse-tag"><i></i>3 escalations</span></div>
+              <ul class="esc-list">
+                <li><i class="sw r"></i><div><b>Sample Facility C</b><span>Red for 2 visits &middot; Regional 2</span></div><em>Escalated</em></li>
+                <li><i class="sw r"></i><div><b>Maple Grove Care</b><span>Equipment issue open &middot; Regional 1</span></div><em>Escalated</em></li>
+                <li><i class="sw y"></i><div><b>Sample Facility K</b><span>Visit overdue 6 days &middot; Regional 3</span></div><em class="soft">Overdue</em></li>
+              </ul>
+            </div>
+
+            <div class="card month">
+              <div class="card-h"><h3>Monthly report</h3><span class="mini">Ready to send</span></div>
+              <div class="month-doc" aria-hidden="true">
+                <span class="md-t"></span><span class="md-l"></span><span class="md-l s"></span>
+                <span class="md-bars"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:50%"></i><i style="--h:78%"></i><i style="--h:66%"></i><i style="--h:90%"></i></span>
+              </div>
+              <p class="mini">Automatic each month for ownership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="feat-list reveal">
+        <li><span class="fi">01</span><div><h3>Portfolio at a glance</h3><p>Every facility color coded green, yellow or red by relationship health.</p></div></li>
+        <li><span class="fi">02</span><div><h3>Trends over time</h3><p>See which facilities are improving and which are slipping, month over month.</p></div></li>
+        <li><span class="fi">03</span><div><h3>Escalations first</h3><p>Red facilities and overdue visits rise to the top so nothing gets missed.</p></div></li>
+        <li><span class="fi">04</span><div><h3>Monthly reports</h3><p>A clean summary of the whole portfolio, delivered every month.</p></div></li>
+      </ul>
+    </div>
+
+    <!-- REGIONAL -->
+    <div class="panel" id="panel-reg" role="tabpanel" aria-labelledby="tab-reg" hidden>
+      <div class="reg-wrap">
+        <div class="phone-col">
+          <div class="phone" aria-label="Sample regional app (sample data)">
+            <div class="notch" aria-hidden="true"></div>
+            <div class="screen">
+              <div class="app-top"><span class="app-time">9:41</span><span class="badge sm">Sample data</span></div>
+
+              <!-- screen 0 home -->
+              <section class="scr on" data-s="0" aria-label="Today">
+                <p class="app-hi">Good morning, <b>Regional 1</b></p>
+                <div class="app-map" aria-hidden="true">
+                  <i class="pin g" style="left:18%;top:30%"></i><i class="pin y" style="left:44%;top:58%"></i><i class="pin g" style="left:70%;top:24%"></i><i class="pin r" style="left:62%;top:70%"></i><i class="pin g" style="left:30%;top:76%"></i><i class="pin y" style="left:84%;top:52%"></i>
+                  <span class="me"></span>
+                </div>
+                <p class="app-sec">Due this week</p>
+                <ul class="due">
+                  <li><i class="sw r"></i><span><b>Sample Facility C</b><small>1 of 2 visits this month</small></span><em>Today</em></li>
+                  <li><i class="sw y"></i><span><b>Maple Grove Care</b><small>0 of 2 visits this month</small></span><em>Thu</em></li>
+                  <li><i class="sw g"></i><span><b>Sample Facility F</b><small>1 of 2 visits this month</small></span><em>Fri</em></li>
+                </ul>
+                <button class="app-btn" data-go="1">+ Log a visit</button>
+              </section>
+
+              <!-- screen 1 form -->
+              <section class="scr" data-s="1" aria-label="Log a visit">
+                <p class="app-back" data-go="0">&larr; Back</p>
+                <h4 class="app-h">New visit</h4>
+                <label class="fld"><span>Facility</span><b>Sample Facility C</b></label>
+                <p class="app-sec">Visit type</p>
+                <div class="vtypes" role="group" aria-label="Visit type">
+                  <button class="vt on" aria-pressed="true">Routine monthly</button>
+                  <button class="vt" aria-pressed="false">Relationship building</button>
+                  <button class="vt" aria-pressed="false">Compliance follow-up</button>
+                  <button class="vt" aria-pressed="false">Equipment / cart issue</button>
+                  <button class="vt" aria-pressed="false">Quick stop</button>
+                </div>
+                <p class="app-sec">How did it go?</p>
+                <div class="health" role="group" aria-label="Relationship health">
+                  <button class="hb g" aria-pressed="false">Green</button>
+                  <button class="hb y on" aria-pressed="true">Yellow</button>
+                  <button class="hb r" aria-pressed="false">Red</button>
+                </div>
+                <div class="fld notes"><span>Notes</span><p class="typed" data-text="Met with the administrator. Cart issue on the 2nd floor resolved. Follow up on staffing next visit."></p></div>
+                <button class="app-btn" data-go="2">Submit visit</button>
+              </section>
+
+              <!-- screen 2 submitted -->
+              <section class="scr" data-s="2" aria-label="Submitted">
+                <div class="done">
+                  <svg viewBox="0 0 52 52" class="check" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+                  <h4 class="app-h">Visit submitted</h4>
+                  <p class="app-p">Sent to leadership for review. Facility history updated.</p>
+                </div>
+                <div class="tl">
+                  <div class="tl-i ok"><i></i><span>Logged on site</span></div>
+                  <div class="tl-i ok"><i></i><span>Submitted</span></div>
+                  <div class="tl-i wait"><i></i><span>Waiting for review&hellip;</span></div>
+                </div>
+                <button class="app-btn ghost" data-go="3">See review &rarr;</button>
+              </section>
+
+              <!-- screen 3 reviewed -->
+              <section class="scr" data-s="3" aria-label="Reviewed">
+                <p class="app-back" data-go="0">&larr; Home</p>
+                <h4 class="app-h">Reviewed <span class="tick">&#10003;</span></h4>
+                <div class="msg in"><b>Leadership</b><p>Nice work closing out the cart issue. Let&rsquo;s get them back to green by the next visit.</p></div>
+                <div class="msg out"><p>Will do. Second visit is booked for the 18th.</p></div>
+                <div class="alert"><i class="sw r"></i><p><b>Escalation email sent</b> for Sample Facility C (red status) to the leadership team.</p></div>
+                <button class="app-btn" data-go="0">Done</button>
+              </section>
+            </div>
+          </div>
+          <ol class="flow" aria-label="Visit workflow">
+            <li class="on" data-go="0"><button type="button">Today</button></li>
+            <li data-go="1"><button type="button">Log</button></li>
+            <li data-go="2"><button type="button">Submit</button></li>
+            <li data-go="3"><button type="button">Review</button></li>
+          </ol>
+          <p class="tap-hint">Tap through the app &uarr;</p>
+        </div>
+
+        <ul class="feat-list two reveal">
+          <li><span class="fi">01</span><div><h3>Log visits in seconds</h3><p>Routine monthly, relationship building, compliance follow-up, equipment or cart issue, or a quick stop.</p></div></li>
+          <li><span class="fi">02</span><div><h3>Facility history</h3><p>Every past visit, note and status for a facility, right on the phone before walking in.</p></div></li>
+          <li><span class="fi">03</span><div><h3>Map of your facilities</h3><p>See your whole territory, color coded, and plan the day&rsquo;s route.</p></div></li>
+          <li><span class="fi">04</span><div><h3>Reminders when a facility is due</h3><p>Two visits a month per facility, tracked automatically.</p></div></li>
+          <li><span class="fi">05</span><div><h3>Leadership review</h3><p>Leadership reviews each visit and the regional gets feedback, so coaching happens every week.</p></div></li>
+          <li><span class="fi">06</span><div><h3>Messaging and escalations</h3><p>Built-in messaging, plus automatic escalation emails when a facility turns red.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-reports" id="reports" aria-labelledby="reports-title">
+    <div class="p-head reveal">
+      <p class="label">Reports</p>
+      <h2 id="reports-title" class="p-title">The numbers ownership <em>actually asks for.</em></h2>
+      <p class="note">Ready-made reports from the same visit data, so no one builds a spreadsheet at month end. Charts below show sample data.</p>
+    </div>
+    <div class="rgrid">
+      <article class="tile rcard reveal">
+        <p class="rk">Visit summaries</p>
+        <div class="bars" aria-hidden="true"><i style="--h:46%"></i><i style="--h:70%"></i><i style="--h:58%"></i><i style="--h:84%"></i><i style="--h:64%"></i><i style="--h:92%"></i><i style="--h:76%"></i></div>
+        <p class="rd">Every visit by week, type and regional.</p>
+      </article>
+      <article class="tile rcard reveal">
+        <p class="rk">Facility scorecards</p>
+        <div class="ring-wrap" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="48" class="r-bg"/><circle cx="60" cy="60" r="48" class="r-fg" pathLength="100"/></svg>
+          <span class="ring-n">A&minus;</span>
+        </div>
+        <p class="rd">One page per facility: status, history and open items.</p>
+      </article>
+      <article class="tile rcard reveal">
+        <p class="rk">Regional activity</p>
+        <div class="hbars" aria-hidden="true">
+          <div><span>Regional 1</span><i style="--w:88%"></i></div>
+          <div><span>Regional 2</span><i style="--w:72%"></i></div>
+          <div><span>Regional 3</span><i style="--w:94%"></i></div>
+          <div><span>Regional 4</span><i style="--w:60%"></i></div>
+        </div>
+        <p class="rd">Visits completed and reviewed, per team member.</p>
+      </article>
+      <article class="tile rcard reveal">
+        <p class="rk">Overdue visits</p>
+        <ul class="od" aria-hidden="true">
+          <li><i class="sw r"></i>Sample Facility K<em>6d</em></li>
+          <li><i class="sw y"></i>Sample Facility P<em>3d</em></li>
+          <li><i class="sw y"></i>Sample Facility T<em>1d</em></li>
+        </ul>
+        <p class="rd">Who&rsquo;s behind on the two-visits-a-month cadence.</p>
+      </article>
+      <article class="tile rcard wide reveal">
+        <p class="rk">Red-to-green turnarounds</p>
+        <div class="turn" aria-hidden="true"></div>
+        <p class="rd">Facilities that moved from red back to green, and the visits that got them there.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="p-loop" aria-labelledby="loop-title">
+    <div class="p-head reveal">
+      <p class="label">How it fits together</p>
+      <h2 id="loop-title" class="p-title">From the parking lot <em>to the boardroom.</em></h2>
+    </div>
+    <ol class="loop reveal">
+      <li><span class="lp-n">I</span><h3>Visit</h3><p>The regional logs the visit on site.</p></li>
+      <li><span class="lp-n">II</span><h3>Review</h3><p>Leadership reviews it and sends feedback.</p></li>
+      <li><span class="lp-n">III</span><h3>Escalate</h3><p>Red facilities trigger an email right away.</p></li>
+      <li><span class="lp-n">IV</span><h3>Report</h3><p>Ownership sees it all in the portfolio and monthly reports.</p></li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact-glow" aria-hidden="true"></div>
+    <div class="contact-inner">
+      <h2 id="contact-title" class="contact-title reveal">Want to see it on <em>your portfolio?</em></h2>
+      <p class="lede reveal">We&rsquo;ll walk you through the platform with your own facilities and regional structure in mind.</p>
+      <p class="contact-ctas reveal"><a class="btn btn-gold btn-lg magnetic" href="mailto:shlomopinter@gmail.com?subject=Platform%20demo"><span>Request a demo <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a><a class="btn btn-line btn-lg magnetic" data-booking href="#contact"><span>Book a call <span class="btn-arrow" aria-hidden="true">&rarr;</span></span></a></p>
+      <div class="contact-row reveal">
+        <a class="email" href="mailto:shlomopinter@gmail.com?subject=Platform%20demo">shlomopinter@gmail.com</a>
+        <button class="copy magnetic" type="button" data-copy="shlomopinter@gmail.com"><span>Copy email</span></button>
+      </div>
+      <p class="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span class="foot-logo"><img class="logo logo-dk" src="img/logo-dark.png" alt="Texoma Healthcare" width="1055" height="215" loading="lazy"><img class="logo logo-lt" src="img/logo-light.png" alt="" aria-hidden="true" width="1055" height="215" loading="lazy"></span>
+  <span>&copy; <span id="year">2026</span> Texoma Healthcare Group</span>
+  <a href="index.html">Home</a>
+  <a href="#top">Back to top &uarr;</a>
+</footer>
+</body>
+</html>
