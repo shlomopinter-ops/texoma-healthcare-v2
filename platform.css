@@ -284,3 +284,4 @@
 }
 .nav-right .nav-cta{white-space:nowrap}
 @media (max-width:420px){.nav-right{gap:6px}.nav-right .nav-cta,.nav-plat{font-size:13px;padding:10px 12px}}
+@media (min-width:901px){.dash-grid{grid-template-areas:"pf pf pf pf tr tr" "mo mo mo mo es es"}.fac-grid{grid-template-columns:repeat(16,minmax(0,1fr))}.month-doc .md-bars{height:56px}}
